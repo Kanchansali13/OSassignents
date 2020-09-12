@@ -1,0 +1,72 @@
+1. Write a script to create 10 directories, say a1,a2,...,a10
+
+for (( i=1 ; i<=10  ; i++ ))
+do
+mkdir "$i"
+
+done
+
+Report error if a directory/file exists with the same name.
+for (( i=1 ; i<=10  ; i++ ))
+do
+
+if [ "-d" "$i" ]; then
+echo "$i exists!!!"
+else
+mkdir "$i"
+fi
+done
+
+
+2.Write a menu based script to perform following string operations
+a) To find length of a string
+c) Copying string
+d) Concatenation of strings
+e) Compare two strings
+f) Reversing a string
+
+echo "For finding length of string....."
+echo "enter the string"
+read str
+len=${#str}
+echo "lenghth=" $len
+
+echo "For copying the string...."
+str1=$str
+echo "copied string is" $str1
+
+echo "concatenation of string.."
+
+echo "enter first string:"
+read str2
+echo "enter second string;"
+read str3
+
+str4="$str2$str3"
+echo $str4
+
+echo "for reversing the string"
+echo "enter any string you want to reverse"
+read value
+rev=$value|rev
+echo $value
+
+3.Write a shell script to rename all files in the current directory with numeric continuous value(Warning: Do this in a personal folder. Don't use Home directory) 
+
+for (( i=1; i<=10; i++ ))
+do
+        mv "$i" kanchan
+done
+
+
+4. Write a script that print environment variable(Print $HOME,$PATH,$SHELL,$HISTORY,$LOGNAME,$TERM)
+
+
+5. Write a shell script to print all files permissions in current directory(Not name or other details)(Use cut commands)
+
+ls -la | cut -b 1-12
+
+
+6. Write a shell script to print all files permissions and name of file
+
+ls -l
